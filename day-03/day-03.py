@@ -1,4 +1,4 @@
-from parse import FabricBoard, Claim
+from items import FabricBoard, Claim
 from itertools import combinations
 
 with open('../data/03-input.txt', 'r') as f:
@@ -15,12 +15,13 @@ print(f"The number of overlapping squares: {fb.get_overlapping_squares()}\n")
 
 #==============================================================================
 
-solo_claim = "NOPE"
+solo_claim = ""
 for line in input_lines:
     cl = Claim(line)
     fb.rm_claim(cl)
     if fb.check_empty(cl):
         solo_claim = cl.claim_id
+        break
     else:
         fb.add_claim(cl)
     
