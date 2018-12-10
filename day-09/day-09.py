@@ -15,13 +15,9 @@ def run_game(n_players, max_points):
     current = 1
     player = 0
 
-    mod_circle = lambda n: n % len(circle)
     mod_player = lambda n: n % n_players
 
     for m in range(2, max_points + 1):
-
-        if m % 10_000_000 == 0:
-            print(f"Round {m}")
 
         if m % 23 != 0:
             circle.rotate(2)
