@@ -36,4 +36,4 @@ def countPlants(state: Map[Int, String]) = state.map(t => if (t._2 == "#") t._1 
 var state = initState
 for (i <- 1 to 20) state = simGeneration(state)
 
-countPlants(state)
+println(countPlants(state))
